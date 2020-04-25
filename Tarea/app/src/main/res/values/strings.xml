@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Tarea</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_iniciar">Iniciar</string>
+    <string name="user_name">Jose Mauricio Castro Anaya</string>
+    <string name="btn_action_seleccionar">Seleccionar</string>
+    <string name="txt_rdbtn03">Tres medallas</string>
+    <string name="txt_rdbtn02">Dos medallas</string>
+    <string name="txt_rdbtn04">Cuatro medallas</string>
+    <string name="txt_rdbtn01">Una medalla</string>
+    <string name="txt_pregunta">Cuantas medallas tiene brasil</string>
+    <string name="txt_respuesta_indicador">Su respuesta fue:</string>
+    <string name="txt_respuesta_guardada">Cuatro medallas</string>
+</resources>
