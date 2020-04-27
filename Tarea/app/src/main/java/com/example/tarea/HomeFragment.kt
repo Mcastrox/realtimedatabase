@@ -20,6 +20,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.title=getString(R.string.HomeFragmentTitle)
         var binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,R.layout.fragment_home,container,false)
         binding.btnIniciar.setOnClickListener {view:View->
             view.findNavController().navigate(R.id.action_homeFragment_to_secondFragment)

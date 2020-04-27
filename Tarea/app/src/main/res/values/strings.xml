@@ -13,4 +13,7 @@
     <string name="txt_pregunta">Cuantas medallas tiene brasil</string>
     <string name="txt_respuesta_indicador">Su respuesta fue:</string>
     <string name="txt_respuesta_guardada">Cuatro medallas</string>
+    <string name="SecondFragmentTitle">Pregunta (1/1)</string>
+    <string name="HomeFragmentTitle">Perfil</string>
+    <string name="AnswerFragmentTitle">Respuestas</string>
 </resources>

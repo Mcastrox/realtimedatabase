@@ -10,12 +10,14 @@
         android:layout_height="match_parent">
 
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_photo"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginBottom="@dimen/wide_margin"
-            android:src="@mipmap/ic_profilephoto_foreground"
+            android:src="@drawable/profilefoto"
+            app:civ_border_width="5dp"
+            app:civ_border_color="@color/redEdited"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +48,7 @@
             android:layout_height="59dp"
             android:layout_marginTop="@dimen/wide_margin"
             android:layout_marginBottom="16dp"
-            android:background="#CF3C3C"
+            android:background="@color/redEdited"
             android:soundEffectsEnabled="true"
             android:text="@string/txt_iniciar"
             android:textAllCaps="true"

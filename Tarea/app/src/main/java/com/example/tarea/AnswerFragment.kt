@@ -24,8 +24,9 @@ class AnswerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.title=getString(R.string.AnswerFragmentTitle)
         var binding = DataBindingUtil.inflate<FragmentAnswerBinding>(inflater,R.layout.fragment_answer,container,false)
-
+        binding.txtAnswer.text = MainActivity.medallaselect
         return binding.root
 
 
