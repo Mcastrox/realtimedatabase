@@ -39,9 +39,6 @@ class PerfilFragment : Fragment() {
     private lateinit var username: TextView
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
-    private lateinit var imageUser: ImageView
-    private lateinit var mStorageRef : StorageReference
-    var selected : Uri? =null
 
     override fun onCreateView(
 
@@ -62,9 +59,7 @@ class PerfilFragment : Fragment() {
             startActivity(Intent(activity,TutorActivity::class.java))
         }
 
-        binding.selectImage.setOnClickListener {
-            selectImage()
-        }
+
 
         return binding.root
 
@@ -75,7 +70,6 @@ class PerfilFragment : Fragment() {
         username = binding.username
         usermail = binding.usermail
         userTel = binding.mperfilTelefono
-        imageUser=binding.selectImage
 
     }
     fun initialize(){
@@ -84,7 +78,7 @@ class PerfilFragment : Fragment() {
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         val userRef = ref.child(user?.uid!!)
 
-         mStorageRef =FirebaseStorage.getInstance().reference
+
 
         usermail.text = user?.email!!.toString()
         userRef.addValueEventListener(object: ValueEventListener{
@@ -102,39 +96,6 @@ class PerfilFragment : Fragment() {
 
         })
 
-    }
-    fun selectImage(){
-        if(ContextCompat.checkSelfPermission(activity!!,android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
-            requestPermissions(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
-        }
-        else{
-            val intent=Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(intent,2)
-        }
-        val uid=  UUID.randomUUID()
-        val imageName = "images/$uid.jpg"
-        val storageReference = mStorageRef!!.child(imageName)
-        storageReference.putFile(selected!!)
-
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray)
-    {
-        if(requestCode == 1){
-            if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                val intent = Intent (Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-                startActivityForResult(intent,2)
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode == 2 && resultCode == Activity.RESULT_OK && data != null ){
-        selected= data.data
-            imageUser.setImageURI(selected)
-        }
-        super.onActivityResult(requestCode, resultCode, data)
     }
 
 

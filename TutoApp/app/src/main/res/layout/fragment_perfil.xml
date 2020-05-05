@@ -28,7 +28,6 @@
                     android:layout_margin="8dp"
                     android:adjustViewBounds="true"
                     android:id="@+id/selectImage"
-                    android:onClick="selectImage"
                     android:background="@drawable/circle"
                     android:scaleType="centerInside"
                     app:srcCompat="@drawable/ic_usuario" />

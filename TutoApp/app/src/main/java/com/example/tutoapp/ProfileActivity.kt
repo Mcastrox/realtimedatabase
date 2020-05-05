@@ -1,13 +1,25 @@
 package com.example.tutoapp
 
+import android.app.Activity
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_profile.*
+import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -19,13 +31,20 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var modDireccion:TextView
     private lateinit var modTel:TextView
     private lateinit var uid:String
+    private lateinit var mStorageRef : StorageReference
+    var selected : Uri? =null
+    private lateinit var imageUser: ImageView
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         initialise()
         modificar_info.setOnClickListener {
             guardar()
+        }
+        imageSelected.setOnClickListener {
+            selectImage()
         }
         /*val user: FirebaseUser?=mAuth.currentUser
         mDataBaseReference= FirebaseDatabase.getInstance().getReference("Users")
@@ -62,7 +81,7 @@ class ProfileActivity : AppCompatActivity() {
 
         tvemail.text = user?.email!!.toString()
 
-
+        mStorageRef = FirebaseStorage.getInstance().reference
 
         //buscando el nombre
         val ref = FirebaseDatabase.getInstance().getReference("Users")
@@ -89,6 +108,41 @@ class ProfileActivity : AppCompatActivity() {
         })
 
     }
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun selectImage(){
+        if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+            requestPermissions(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
+        }
+        else{
+            val intent= Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(intent,2)
+        }
+        val uid=  UUID.randomUUID()
+        val imageName = "images/$uid.jpg"
+        val storageReference = mStorageRef!!.child(imageName)
+        storageReference.putFile(selected!!)
+
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray)
+    {
+        if(requestCode == 1){
+            if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                val intent = Intent (Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                startActivityForResult(intent,2)
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 2 && resultCode == Activity.RESULT_OK && data != null ){
+            selected= data.data
+            imageUser.setImageURI(selected)
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
 
 
 
