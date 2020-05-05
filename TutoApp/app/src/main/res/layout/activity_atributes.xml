@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".AtributesActivity">
+
+    <TextView
+        android:id="@+id/textEducacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Grado academico"
+        android:textColor="#9FFF0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/guardar_tutor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#95FF0000"
+        android:textColor="@color/blackMate"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEducacion"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/educacion_tutor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Grado academico"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEducacion"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textOcupacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Ocupacion"
+        android:textColor="#9FFF0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/educacion_tutor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/ocupacion_tutor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Ocupacion"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOcupacion"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Descripcion"
+        android:textColor="#9FFF0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ocupacion_tutor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/descripcion_tutor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Descripcion"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescripcion"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textCategorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Selecciona tus categorias"
+        android:textColor="#9FFF0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion_tutor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/listviewCategorias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCategorias"
+        app:layout_constraintVertical_bias="0.008">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#514FDAB9"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/categoria_arte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Arte" />
+
+            <CheckBox
+                android:id="@+id/categoria_idiomas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Idiomas" />
+
+            <CheckBox
+                android:id="@+id/categoria_matematicas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Matematicas" />
+
+            <CheckBox
+                android:id="@+id/categoria_cocina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cocina" />
+
+            <CheckBox
+                android:id="@+id/categoria_economia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Economia" />
+
+            <CheckBox
+                android:id="@+id/categoria_habilidadesSociales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Habilidades Sociales" />
+
+            <CheckBox
+                android:id="@+id/categoria_fisica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fisica" />
+
+            <CheckBox
+                android:id="@+id/categoria_computacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Computacion" />
+
+            <CheckBox
+                android:id="@+id/categoria_quimica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quimica" />
+
+            <CheckBox
+                android:id="@+id/categoria_deportes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deportes" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

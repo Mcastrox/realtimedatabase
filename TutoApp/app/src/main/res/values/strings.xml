@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TutoApp</string>
+    <string name="login_text">Inicia sesión</string>
+    <string name="register_text">Registro</string>
+    <string name="AppName">TutoApp</string>
+    <string name="txt_register">Registrarse</string>
+    <string name="txt_Login">Iniciar Sesion</string>
+    <string name="ToolBarTitle">Tutores</string>
+    <string name="TituloFav">Favorito</string>
+    <string name="welcome_text">Bienvenido</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

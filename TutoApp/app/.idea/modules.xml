@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Register.iml" filepath="$PROJECT_DIR$/../Register.iml" group="Register" />
+      <module fileurl="file://$PROJECT_DIR$/Register-app.iml" filepath="$PROJECT_DIR$/Register-app.iml" group="Register/app" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="Register/app" />
+      <module fileurl="file://$PROJECT_DIR$/../asder-Register.iml" filepath="$PROJECT_DIR$/../asder-Register.iml" group="Register" />
+    </modules>
+  </component>
+</project>

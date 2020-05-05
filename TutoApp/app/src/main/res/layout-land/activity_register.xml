@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    tools:context=".Register_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_blackAlpha"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/big_padding"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/big_padding">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu"
+                            android:text="@string/register_text"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:layout_marginBottom="@dimen/medium_margin"
+                            android:background="@android:color/darker_gray" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/hint_color"
+                            app:hintTextColor="@color/soft_cyan">
+
+                            <EditText
+                                android:id="@+id/txt_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/et_small_height"
+                                android:background="#A3131313"
+                                android:ems="10"
+                                android:hint="Nombre"
+                                android:inputType="textPersonName"
+                                android:padding="@dimen/small_margin"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/hint_color"
+                            app:hintTextColor="@color/soft_cyan">
+
+                            <EditText
+                                android:id="@+id/txt_lastname"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/et_small_height"
+                                android:background="#A3131313"
+                                android:ems="10"
+                                android:hint="Apellido"
+                                android:inputType="textPersonName"
+                                android:padding="@dimen/small_margin"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/hint_color"
+                            app:hintTextColor="@color/soft_cyan">
+
+                            <EditText
+                                android:id="@+id/txt_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/et_small_height"
+                                android:background="#A3131313"
+                                android:ems="10"
+                                android:hint="Correo"
+                                android:inputType="textEmailAddress"
+                                android:padding="@dimen/small_margin"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/hint_color"
+                            app:hintTextColor="@color/soft_cyan">
+
+                            <EditText
+                                android:id="@+id/txt_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/et_small_height"
+                                android:background="#A3131313"
+                                android:ems="10"
+                                android:hint="Contraseña"
+                                android:inputType="textPassword"
+                                android:padding="@dimen/small_margin"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/hint_color"
+                            app:hintTextColor="@color/soft_cyan">
+
+                            <EditText
+                                android:id="@+id/txt_telefono"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/et_small_height"
+                                android:background="#A3131313"
+                                android:ems="10"
+                                android:hint="Teléfono"
+                                android:padding="@dimen/small_margin"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/hint_color"
+                            app:hintTextColor="@color/soft_cyan">
+
+                            <EditText
+                                android:id="@+id/txt_direccion"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/et_small_height"
+                                android:layout_marginBottom="@dimen/medium_margin"
+                                android:background="#A3131313"
+                                android:ems="10"
+                                android:hint="Dirección"
+                                android:padding="@dimen/small_margin"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <CheckBox
+                            android:id="@+id/cbx_politics"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/medium_margin"
+                            android:buttonTint="@color/light_grayish"
+                            android:text="Al registrarme acepto los términos y políticas de privacidad"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/small_text"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#CD4FDAB9"
+                            android:onClick="register"
+                            android:text="Crear cuenta"
+                            android:textColor="#FFFFFf"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+</LinearLayout>
