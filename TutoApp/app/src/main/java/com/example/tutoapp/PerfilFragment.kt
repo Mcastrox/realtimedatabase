@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -22,9 +23,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_central.*
 import kotlinx.android.synthetic.main.activity_mperfil.*
 import kotlinx.android.synthetic.main.fragment_perfil.view.*
+import java.util.*
 import java.util.jar.Manifest
 
 /**
@@ -35,6 +39,8 @@ class PerfilFragment : Fragment() {
     private lateinit var username: TextView
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
+    private lateinit var imageUser: ImageView
+    private lateinit var mStorageRef : StorageReference
     var selected : Uri? =null
 
     override fun onCreateView(
@@ -56,7 +62,9 @@ class PerfilFragment : Fragment() {
             startActivity(Intent(activity,TutorActivity::class.java))
         }
 
-        binding.selectImage.setImageResource(R.drawable.ic_english)
+        binding.selectImage.setOnClickListener {
+            selectImage()
+        }
 
         return binding.root
 
@@ -67,6 +75,7 @@ class PerfilFragment : Fragment() {
         username = binding.username
         usermail = binding.usermail
         userTel = binding.mperfilTelefono
+        imageUser=binding.selectImage
 
     }
     fun initialize(){
@@ -74,6 +83,8 @@ class PerfilFragment : Fragment() {
         val user:FirebaseUser?=auth.currentUser
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         val userRef = ref.child(user?.uid!!)
+
+         mStorageRef =FirebaseStorage.getInstance().reference
 
         usermail.text = user?.email!!.toString()
         userRef.addValueEventListener(object: ValueEventListener{
@@ -92,7 +103,7 @@ class PerfilFragment : Fragment() {
         })
 
     }
-    fun selectImage(view: View){
+    fun selectImage(){
         if(ContextCompat.checkSelfPermission(activity!!,android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             requestPermissions(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
         }
@@ -100,6 +111,10 @@ class PerfilFragment : Fragment() {
             val intent=Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(intent,2)
         }
+        val uid=  UUID.randomUUID()
+        val imageName = "images/$uid.jpg"
+        val storageReference = mStorageRef!!.child(imageName)
+        storageReference.putFile(selected!!)
 
     }
 
@@ -117,6 +132,7 @@ class PerfilFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode == 2 && resultCode == Activity.RESULT_OK && data != null ){
         selected= data.data
+            imageUser.setImageURI(selected)
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
