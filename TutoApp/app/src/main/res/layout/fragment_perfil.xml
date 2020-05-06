@@ -32,6 +32,11 @@
                     android:scaleType="centerInside"
                     app:srcCompat="@drawable/ic_usuario" />
             </RelativeLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cambiarImagen"
+                android:text="Cambiar"/>
 
             <TextView
                 android:id="@+id/username"
