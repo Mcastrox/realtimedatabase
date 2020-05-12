@@ -32,11 +32,6 @@
                     android:scaleType="centerInside"
                     app:srcCompat="@drawable/ic_usuario" />
             </RelativeLayout>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/cambiarImagen"
-                android:text="Cambiar"/>
 
             <TextView
                 android:id="@+id/username"
@@ -78,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-black"
-                        android:text="tel:"
+
                         android:textColor="@color/redBrick"
                         android:textSize="16dp" />
 
@@ -87,7 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-black"
-                        android:text="ejemplo@gmail.com"
+
                         android:textColor="@color/redBrick"
                         android:textSize="16dp" />
 
@@ -132,7 +127,7 @@
                         android:textSize="24dp" />
 
                     <TextView
-                        android:id="@+id/new_tutor"
+                        android:id="@+id/mis_tutorias"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"

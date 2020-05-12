@@ -15,6 +15,7 @@
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="#FFF"
         app:itemTextColor="#000"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

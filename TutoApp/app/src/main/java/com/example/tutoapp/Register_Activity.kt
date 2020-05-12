@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register.*
+import java.util.*
 
 class Register_Activity : AppCompatActivity() {
     private lateinit var txtName: EditText
@@ -58,6 +59,8 @@ class Register_Activity : AppCompatActivity() {
 
     }
     private fun createNewUser(){
+        val uuid= UUID.randomUUID()
+
         val name: String = txt_name.text.toString()
         val lastName: String = txt_lastname.text.toString()
         val email: String = txt_email.text.toString()
@@ -82,6 +85,8 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("telefono").setValue(tel)
                         userBD.child("direccion").setValue(direccion)
                         userBD.child("Rol").setValue("Estudiante")
+                        userBD.child("urlImage").setValue("0")
+                        userBD.child("ID").setValue(uuid)
                         action()
                     }
 

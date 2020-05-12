@@ -1,6 +1,6 @@
 package com.example.tutoapp
 
-import android.content.Context
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -17,7 +17,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_mostrar.*
+import kotlinx.android.synthetic.main.fragment_search.*
 
 
 /**
@@ -25,9 +25,7 @@ import kotlinx.android.synthetic.main.activity_mostrar.*
  */
 class SearchFragment : Fragment() {
 
-    private lateinit var uid: String
     private var toolbar: Toolbar? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -52,6 +50,7 @@ class SearchFragment : Fragment() {
         var actionBar = activity?.actionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+
         var me = this // variable para guardar el contexto actual
 
         var listaTutores = mutableListOf<Model>()
@@ -59,6 +58,7 @@ class SearchFragment : Fragment() {
 
         //Aqui se trae todos los valores
         ref.addValueEventListener(object : ValueEventListener {
+
             override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
@@ -72,6 +72,8 @@ class SearchFragment : Fragment() {
                     var lastName: String = ""
                     var direccion: String = ""
                     var rol: String = ""
+                    var ruta : String = ""
+
                     if (e.child("lastName").value != null) {
                         lastName = e.child("lastName").value as String
                     }
@@ -81,8 +83,12 @@ class SearchFragment : Fragment() {
                     if (e.child("Rol").value != null) {
                         rol = e.child("Rol").value as String
                     }
+                    if(e.child("urlImage").value != null){
+                        ruta=e.child("urlImage").value as String
+                    }
+
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(lastName, direccion, R.drawable.ic_laptop))
+                        listaTutores.add(Model(lastName, direccion,R.drawable.ic_chef,ruta))
                     }
 
                 }
