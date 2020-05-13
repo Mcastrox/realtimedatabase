@@ -59,8 +59,6 @@ class Register_Activity : AppCompatActivity() {
 
     }
     private fun createNewUser(){
-        val uuid= UUID.randomUUID()
-
         val name: String = txt_name.text.toString()
         val lastName: String = txt_lastname.text.toString()
         val email: String = txt_email.text.toString()
@@ -86,7 +84,7 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("direccion").setValue(direccion)
                         userBD.child("Rol").setValue("Estudiante")
                         userBD.child("urlImage").setValue("0")
-                        userBD.child("ID").setValue(uuid)
+                        userBD.child("ID").setValue(user.uid!!)
                         action()
                     }
 
