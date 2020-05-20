@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@android:drawable/checkbox_off_background"
-        android:title="Home" />
-    <item
-        android:id="@+id/perfil"
-        android:icon="@android:drawable/ic_btn_speak_now"
-        android:title="Perfil" />
+        android:icon="@drawable/ic_people"
+        android:title="@string/requests_txt" />
     <item
         android:id="@+id/search"
-        android:icon="@android:drawable/arrow_down_float"
-        android:title="Search " />
+        android:icon="@drawable/ic_search"
+        android:title="@string/search_txt" />
+    <item
+        android:id="@+id/perfil"
+        android:icon="@drawable/ic_person"
+        android:title="@string/profile_txt" />
 </menu>

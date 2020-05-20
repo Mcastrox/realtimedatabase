@@ -18,6 +18,7 @@ class TutorAdapter(private val mContext: Context , private val listaTutores : Li
         layout.image.setImageResource(tutor.img)
 
 
+
         if(tutor.ruta == ""){
             layout.image.setImageResource(tutor.img)
         }

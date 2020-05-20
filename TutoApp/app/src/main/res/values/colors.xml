@@ -9,8 +9,10 @@
     <color name="grey">#BBC3C6</color>
     <color name="soft_cyan">#CD4FDAB9</color>
     <color name="light_grayish">#dcdbd9</color>
-    <color name="hint_color">#A3FFFFFF</color>
+    <color name="hint_color">#A1FFFFFF</color>
     <color name="background_blackAlpha">#E6000000</color>
     <color name="background_blackAlphaLight">#CC000000</color>
     <color name="transparent">#00FFFFFF</color>
 </resources>
+
+

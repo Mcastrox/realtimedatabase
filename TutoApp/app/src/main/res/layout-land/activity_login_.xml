@@ -133,7 +133,16 @@
                             android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
+                    <CheckBox
+                        android:id="@+id/logeadoState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:buttonTint="@color/light_grayish"
+                        android:text="Mantenerme logeado"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -73,6 +73,7 @@ class SearchFragment : Fragment() {
                     var direccion: String = ""
                     var rol: String = ""
                     var ruta : String = ""
+                    var id : String = e.child("ID").value as String
 
                     if (e.child("lastName").value != null) {
                         lastName = e.child("lastName").value as String
@@ -87,8 +88,9 @@ class SearchFragment : Fragment() {
                         ruta=e.child("urlImage").value as String
                     }
 
+
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(lastName, direccion,R.drawable.ic_chef,ruta))
+                        listaTutores.add(Model(id,lastName, direccion,R.drawable.ic_art,ruta))
                     }
 
                 }

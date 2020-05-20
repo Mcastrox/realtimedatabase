@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.row.view.*
 import kotlinx.android.synthetic.main.tutorias.view.*
 
 class SolicitudAdapter (private val mContext: Context, private val listaTutorias : List<TutoriaModel>): ArrayAdapter<TutoriaModel>(mContext,0,listaTutorias) {
@@ -12,9 +14,12 @@ class SolicitudAdapter (private val mContext: Context, private val listaTutorias
         val layout = LayoutInflater.from(mContext).inflate(R.layout.tutorias, parent, false)
         val tutoria = listaTutorias[position]
 
-        layout.categoria_tutoria.text= tutoria.categoria
-        layout.fecha_tutoria.text= tutoria.fecha
-        layout.hora_tutoria.text= tutoria.hora
+        layout.nombre_estudiante.text= tutoria.nombre_estudiante
+        layout.ubicacion.text= tutoria.direccion
+        layout.estado.text= tutoria.estado
+
+
+        Picasso.get().load(tutoria.foto_estudiante).into(layout.foto_estudiante)
 
 
 

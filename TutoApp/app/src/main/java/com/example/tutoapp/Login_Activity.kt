@@ -57,4 +57,5 @@ class Login_Activity : AppCompatActivity() {
     private fun action(){
         startActivity(Intent(this,CentralActivity::class.java))
     }
+
 }

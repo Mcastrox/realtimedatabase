@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".TutoriasActivity"></activity>
-        <activity android:name=".SolicitudActivity" />
+        <activity android:name=".VerSolicitudActivity"></activity>
+        <activity android:name=".TutoriasActivity" />
+        <activity android:name=".ui.SolicitudActivity" />
         <activity android:name=".CentralActivity" />
         <activity android:name=".PseleccionadoActivity" />
         <activity android:name=".TutorActivity" />

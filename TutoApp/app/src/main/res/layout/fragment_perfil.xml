@@ -135,6 +135,14 @@
                         android:gravity="center_horizontal"
                         android:text="MIs Tutorias: "
                         android:textSize="24dp" />
+                    <TextView
+                        android:id="@+id/logOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Cerrar Sesion"
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-black"/>
 
                 </LinearLayout>
             </LinearLayout>

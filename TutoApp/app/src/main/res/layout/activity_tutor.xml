@@ -1,20 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/grad"
-    tools:context=".TutorActivity">
+    android:layout_width="match_parent"
+    android:background="@drawable/bookbackground"
+    tools:context=".TutorActivity"
+    >
 
-    <Button
-        android:id="@+id/nuevo_tutor_action"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nuevo tutor"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/big_padding"
+        android:background="@color/background_blackAlphaLight"
+        >
 
-        />
+        <TextView
+            android:id="@+id/new_tutor_title"
+            android:layout_width="wrap_content"
+            android:maxWidth="400dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/new_tutor_subtitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/big_padding"
+            android:text="@string/txt_tutor_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_text"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            />
 
+        <TextView
+            android:id="@+id/new_tutor_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:textAlignment="center"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/txt_tutor_subtitle"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            />
+
+
+        <Button
+            android:id="@+id/nuevo_tutor_action"
+            android:layout_width="match_parent"
+            android:layout_below="@id/new_tutor_subtitle"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x_big_margin"
+            android:text="@string/txt_tutor_button"
+            android:background="@color/soft_cyan"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/button_size_text"
+            />
+
+
+    </RelativeLayout>
 
 </LinearLayout>

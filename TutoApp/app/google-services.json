@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "224891684701",
-    "firebase_url": "https://tutoapp-feb25.firebaseio.com",
-    "project_id": "tutoapp-feb25",
-    "storage_bucket": "tutoapp-feb25.appspot.com"
+    "project_number": "867016985364",
+    "firebase_url": "https://tutoapp-ace76.firebaseio.com",
+    "project_id": "tutoapp-ace76",
+    "storage_bucket": "tutoapp-ace76.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:224891684701:android:355fd3f1158bc1a4840ab4",
+        "mobilesdk_app_id": "1:867016985364:android:459903eef861e01c445001",
         "android_client_info": {
           "package_name": "com.example.tutoapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "224891684701-deeddgk4g5sk9s6p2vemc62b9vmogsuf.apps.googleusercontent.com",
+          "client_id": "867016985364-5o3c8cckngo0a87d4ghv0u606ok404qr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAKdKOn1fjfNbAn6MIQ7Yodt30CGNK3Qrw"
+          "current_key": "AIzaSyA6B-7LZnuFPuNzahbrtQ0Xbx2SUiJHdQk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "224891684701-deeddgk4g5sk9s6p2vemc62b9vmogsuf.apps.googleusercontent.com",
+              "client_id": "867016985364-5o3c8cckngo0a87d4ghv0u606ok404qr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -11,4 +11,17 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgotten_pass">Para recuperar tu contraseña favor ingresa tu correo</string>
+    <string name="choose_category">Elige la categoria que desees</string>
+    <string name="search_txt">Buscar</string>
+    <string name="profile_txt">Perfil</string>
+    <string name="requests_txt">Solicitudes</string>
+    <string name="ubication_txt">Dirección:</string>
+    <string name="category_txt">Categoria</string>
+    <string name="date_txt">Fecha</string>
+    <string name="time_txt">Selecciona la hora</string>
+    <string name="notas_tutor_txt">Escribele una nota al tutor</string>
+    <string name="txt_tutor_button">Quiero ser tutor</string>
+    <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aqui</string>
+    <string name="txt_tutor_title">¿Quieres formar parte de nuestros tutores?</string>
 </resources>
