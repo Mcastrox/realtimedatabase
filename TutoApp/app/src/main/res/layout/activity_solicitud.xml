@@ -4,25 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/big_padding"
     tools:context=".ui.SolicitudActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blackMate"
+        android:textSize="@dimen/title_text"
+        android:layout_alignParentTop="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/solicitud_txt"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="@dimen/medium_padding"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/string_direccion"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ubication_txt"
-                android:textColor="@color/blackMate" />
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/string_direccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ubication_txt"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/subtitle_text"
+                    android:textColor="@color/blackMate" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:fontFamily="@font/roboto"
+                    android:layout_gravity="center"
+                    android:text="@string/ex_ubication"
+                    android:textSize="@dimen/small_text"
+                    android:textColor="@color/soft_grey" />
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/txt_direccion"
@@ -31,8 +64,10 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="20"
-                android:inputType="textPersonName"
+                android:fontFamily="@font/roboto"
+                android:inputType="textLongMessage"
                 android:paddingLeft="6dp"
+                android:textSize="@dimen/normal_text"
                 android:paddingRight="6dp" />
 
             <TextView
@@ -41,6 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/category_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -50,6 +87,8 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:textSize="@dimen/normal_text"
+                android:fontFamily="@font/roboto"
                 android:inputType="textPersonName"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -60,6 +99,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/date_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -69,6 +110,8 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:textSize="@dimen/normal_text"
+                android:fontFamily="@font/roboto"
                 android:focusable="false"
                 android:inputType="date"
                 android:paddingLeft="6dp"
@@ -80,6 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/time_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -89,6 +134,8 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:textSize="@dimen/normal_text"
+                android:fontFamily="@font/roboto"
                 android:focusable="false"
                 android:inputType="time"
                 android:paddingLeft="6dp"
@@ -101,6 +148,8 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginBottom="@dimen/medium_margin"
                 android:text="@string/notas_tutor_txt"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/subtitle_text"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -110,8 +159,10 @@
                 android:gravity="top"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:inputType="textPersonName|textMultiLine"
                 android:paddingLeft="6dp"
+                android:textSize="@dimen/normal_text"
                 android:paddingRight="6dp" />
 
             <Button
@@ -119,10 +170,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/soft_cyan"
+                android:background="@drawable/button"
                 android:text="Enviar"
+                android:fontFamily="@font/roboto"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="@dimen/button_size_text"
                 android:textStyle="bold" />
         </LinearLayout>
 

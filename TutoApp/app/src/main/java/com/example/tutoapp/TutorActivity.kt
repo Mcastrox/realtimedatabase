@@ -22,7 +22,7 @@ class TutorActivity : AppCompatActivity() {
         nuevo_tutor_action.setOnClickListener {
             referencia.child("Rol").setValue("Tutor")
             startActivity(Intent(this,AtributesActivity::class.java))
-
+            finish()
         }
     }
 }

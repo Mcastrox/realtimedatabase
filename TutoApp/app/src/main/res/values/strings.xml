@@ -4,24 +4,77 @@
     <string name="register_text">Registro</string>
     <string name="AppName">TutoApp</string>
     <string name="txt_register">Registrarse</string>
-    <string name="txt_Login">Iniciar Sesion</string>
+    <string name="txt_Login">Iniciar Sesión</string>
     <string name="ToolBarTitle">Tutores</string>
     <string name="TituloFav">Favorito</string>
     <string name="welcome_text">Bienvenido</string>
 
+
+    <!-- TODO: CATEGORIES -->
+    <string name="design_txt">Diseño</string>
+    <string name="music_txt">Música</string>
+    <string name="maths_s_txt">Matemática superior</string>
+    <string name="socials_sciences_txt">Ciencias sociales</string>
+    <string name="art_txt">Arte</string>
+    <string name="languages_txt">Idiomas</string>
+    <string name="math_txt">Matemáticas</string>
+    <string name="cooking_txt">Cocina</string>
+    <string name="economy_txt">Economía</string>
+    <string name="social_abilities_txt">Habilidades Sociales</string>
+    <string name="physics_txt">Física</string>
+    <string name="computer_science">Computacion</string>
+    <string name="chemistry_txt">Química</string>
+    <string name="sports_txt">Deportes</string>
+    <string name="password_txt">Contraseña</string>
+    <string name="superiorMath_txt">Matemáticas Superiores</string>
+    <string name="CienciasSociales_txt">Ciencias Sociales</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="forgotten_pass">Para recuperar tu contraseña favor ingresa tu correo</string>
-    <string name="choose_category">Elige la categoria que desees</string>
+    <string name="forgotten_pass">Para recuperar tu contraseña, favor ingresa tu correo</string>
+    <string name="choose_category">Elige la categoría que desees</string>
     <string name="search_txt">Buscar</string>
     <string name="profile_txt">Perfil</string>
     <string name="requests_txt">Solicitudes</string>
-    <string name="ubication_txt">Dirección:</string>
-    <string name="category_txt">Categoria</string>
+    <string name="ubication_txt">Dirección</string>
+    <string name="category_txt">Categoría</string>
     <string name="date_txt">Fecha</string>
     <string name="time_txt">Selecciona la hora</string>
-    <string name="notas_tutor_txt">Escribele una nota al tutor</string>
+    <string name="notas_tutor_txt">Escríbele una nota al tutor</string>
     <string name="txt_tutor_button">Quiero ser tutor</string>
-    <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aqui</string>
+    <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aquí</string>
     <string name="txt_tutor_title">¿Quieres formar parte de nuestros tutores?</string>
+    <string name="solicitud_txt">Solicitud de tutoría</string>
+    <string name="education_txt">Grado académico </string>
+    <string name="ocupation_txt">Ocupación</string>
+    <string name="description_txt">Descripción Personal</string>
+    <string name="tutor_profile">Perfil de tutor</string>
+    <string name="modify_txt">Modificar</string>
+    <string name="modify_bar_txt">Modificar Perfil</string>
+    <string name="cellphone_txt">Teléfono</string>
+    <string name="email_txt">Email</string>
+    <string name="username_txt">Nombre</string>
+    <string name="btn_send_attributes">Guardar</string>
+    <string name="lastname_txt">Apellido</string>
+    <string name="new_pass">Ingresa nueva contraseña</string>
+    <string name="confirm_pass_txt">Confirma tu nueva contraseña</string>
+    <string name="contact">Contactar</string>
+    <string name="label_fecha_txt">Fecha y Hora</string>
+    <string name="label_materia_txt">Materia Solicitada</string>
+    <string name="label_notas_txt">Notas Adicionales</string>
+    <string name="btn_aceptar_sol_txt">aceptar</string>
+    <string name="btn_rechazar_sol_txt">rechazar</string>add
+    <string name="nivel_txt">Nivel académico</string>
+    <string name="about_me_txt">Sobre mí</string>
+    <string name="disciplines_txt">Disciplinas</string>
+    <string name="change_password">Cambiar Contraseña</string>
+    <string name="categories_txt">Categorías</string>
+    <string name="tutors_txt">Tutores</string>
+    <string name="ver_solicitud_txt">Ver Solicitud</string>
+    <string name="send_btn_txt">Enviar</string>
+    <string name="empty_sol_txt">No tiene ninguna solicitud.</string>
+    <string name="empty_tutors_txt">No hay tutores disponibles.</string>
+    <string name="ex_education">(ex. Universitario, Maestria, Doctorado)</string>
+    <string name="ex_ubication">(ex. Santa Ana, Santa Ana)</string>
 </resources>

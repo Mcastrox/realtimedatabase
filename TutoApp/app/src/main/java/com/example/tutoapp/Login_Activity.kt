@@ -10,52 +10,66 @@ import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 
 class Login_Activity : AppCompatActivity() {
-    private lateinit var txtUser:EditText
-    private lateinit var txtPassword:EditText
+    private lateinit var txtUser: EditText
+    private lateinit var txtPassword: EditText
     private lateinit var progressBar: ProgressBar
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_)
-        txtUser=findViewById(R.id.txtUser)
-        txtPassword=findViewById(R.id.txtPassword)
-        progressBar= findViewById(R.id.progressBar2)
-        auth= FirebaseAuth.getInstance()
+        txtUser = findViewById(R.id.txtUser)
+        txtPassword = findViewById(R.id.txtPassword)
+        progressBar = findViewById(R.id.progressBar2)
+        auth = FirebaseAuth.getInstance()
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+        );
     }
-    fun forgotPassword(view:View){
-        startActivity(Intent(this,Forgotpass_Activity::class.java))
+
+    fun forgotPassword(view: View) {
+        startActivity(Intent(this, Forgotpass_Activity::class.java))
     }
-    fun register(view:View){
-        startActivity(Intent(this,Register_Activity::class.java))
+
+    fun register(view: View) {
+        startActivity(Intent(this, Register_Activity::class.java))
     }
-    fun login (view: View){
+
+    fun login(view: View) {
         loginUser()
     }
-    private fun loginUser(){
-        val user: String=txtUser.text.toString()
-        val pass: String=txtPassword.text.toString()
-        if(!TextUtils.isEmpty(user)&&!TextUtils.isEmpty(pass) ){
-            progressBar.visibility=View.VISIBLE
 
-            auth.signInWithEmailAndPassword(user,pass)
-                .addOnCompleteListener(this){
-                        task->
-                    if(task.isSuccessful){
+    private fun loginUser() {
+        val user: String = txtUser.text.toString()
+        val pass: String = txtPassword.text.toString()
+        if (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(pass)) {
+            progressBar.visibility = View.VISIBLE
+
+            auth.signInWithEmailAndPassword(user, pass)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
                         action()
-                    }else{
-                        Toast.makeText(this,"Error al autenticar", Toast.LENGTH_LONG).show()
+                        progressBar.visibility = View.GONE
+                    } else {
+                        progressBar.visibility = View.GONE
+                        Toast.makeText(this, "Error al autenticar", Toast.LENGTH_LONG).show()
                     }
                 }
         }
     }
-    private fun action(){
-        startActivity(Intent(this,CentralActivity::class.java))
+
+// probando
+
+    private fun action() {
+        var intent = Intent (this,LatestMessagesActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 
 }

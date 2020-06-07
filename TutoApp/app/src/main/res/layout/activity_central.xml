@@ -10,16 +10,16 @@
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_above="@id/bottomNavigation"/>
+        android:layout_above="@id/bottomNavigation"
+        android:orientation="vertical" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:background="#000"
-        app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/color"
         app:itemTextColor="@color/color"
-        android:layout_alignParentBottom="true"/>
+        app:menu="@menu/bottom_nav_menu" />
 </RelativeLayout>

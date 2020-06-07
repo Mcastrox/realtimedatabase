@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
+    android:orientation="vertical"
     tools:context=".Forgotpass_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_blackAlpha"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:textSize="@dimen/title_text"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_marginTop="@dimen/big_margin"
+            app:title="@string/change_password"
+            app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +48,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ubuntu"
+                android:fontFamily="@font/roboto"
                 android:text="@string/forgotten_pass"
                 android:textColor="@color/white"
                 android:textSize="@dimen/medium_text"
@@ -47,21 +66,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/et_small_height"
                     android:background="#A3131313"
+                    android:fontFamily="@font/roboto"
                     android:ems="10"
                     android:hint="Correo"
                     android:inputType="textEmailAddress"
                     android:padding="@dimen/small_margin"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/subtitle_text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/soft_cyan"
+                android:background="@drawable/button"
+                android:fontFamily="@font/roboto"
                 android:onClick="send"
-                android:text="Enviar"
+                android:text="@string/send_btn_txt"
                 android:textColor="#FFFFFf"
                 android:textSize="@dimen/button_size_text"
                 android:textStyle="bold"

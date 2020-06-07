@@ -34,7 +34,7 @@ class PerfilFragment : Fragment() {
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
     private lateinit var imageUser: ImageView
-    private lateinit var logOut : TextView
+    private lateinit var logOut : Button
     private lateinit var rol : String
     var mStorageRef : StorageReference? =null
     override fun onCreateView(
@@ -61,12 +61,17 @@ class PerfilFragment : Fragment() {
                 startActivity(Intent(activity,TutoriasActivity::class.java))
             }
         }
+        binding.changePassword.setOnClickListener {
+            startActivity(Intent(activity,Change_password::class.java))
+        }
         binding.logOut.setOnClickListener {
 
             Toast.makeText(activity!!,"Loggin Out... ", Toast.LENGTH_SHORT).show()
             logOut()
             if(auth.currentUser==null){
-                startActivity(Intent(activity!!,MainActivity::class.java))
+                var intent = Intent (activity!!, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(activity!!,"No funciono ", Toast.LENGTH_LONG).show()

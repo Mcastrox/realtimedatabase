@@ -11,28 +11,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".VerSolicitudActivity"></activity>
-        <activity android:name=".TutoriasActivity" />
-        <activity android:name=".ui.SolicitudActivity" />
-        <activity android:name=".CentralActivity" />
-        <activity android:name=".PseleccionadoActivity" />
-        <activity android:name=".TutorActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".AtributesActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".CentralActivity"></activity>
+        <activity android:name=".NewMessageActivity"></activity>
+        <activity android:name=".ChatLogActivity" />
+        <activity android:name=".LatestMessagesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Forgotpass_Activity" />
+        <activity
+            android:name=".Change_password"
+            android:parentActivityName=".PerfilFragment" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".TutorFiltradoActivity"
+            android:parentActivityName=".SearchFragment" />
+        <activity android:name=".SearchFragment" />
+        <activity
+            android:name=".VerSolicitudActivity"
+            android:parentActivityName=".TutoriasActivity" />
+        <activity android:name=".TutoriasActivity" />
+        <activity
+            android:name=".ui.SolicitudActivity"
+            android:parentActivityName=".SearchFragment" />
+        <activity android:name=".PseleccionadoActivity" />
+        <activity android:name=".TutorActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".PerfilFragment" />
+        <activity
+            android:name=".AtributesActivity"
+            android:parentActivityName=".TutoriasActivity" />
+        <activity
+            android:name=".Forgotpass_Activity"
+            android:parentActivityName=".Change_password" />
+        <activity android:name=".PerfilFragment" />
         <activity
             android:name=".Login_Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Register_Activity"
             android:windowSoftInputMode="adjustPan" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

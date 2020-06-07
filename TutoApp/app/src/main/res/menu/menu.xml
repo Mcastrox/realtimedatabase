@@ -8,16 +8,17 @@
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"/>
-    <item
-        android:id="@+id/bFav"
-        android:icon="@drawable/ic_favorite"
-        android:title="@string/TituloFav"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/bFav"-->
+<!--        android:icon="@drawable/ic_favorite"-->
+<!--        android:title="@string/TituloFav"-->
+<!--        app:showAsAction="ifRoom" />-->
 
-    <item
-        android:id="@+id/share"
-        android:title="Compartir"
-        app:showAsAction="ifRoom"
-        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
-        />
+<!--    <item-->
+<!--        android:id="@+id/share"-->
+<!--        android:title="Compartir"-->
+<!--        android:fontFamily="@font/roboto"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"-->
+<!--        />-->
 </menu>

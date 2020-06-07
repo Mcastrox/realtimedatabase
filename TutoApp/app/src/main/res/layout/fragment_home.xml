@@ -1,493 +1,518 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    android:weightSum="10"
     tools:context=".HomeFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/blackMate"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Categorias" />
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="10"
+        >
 
-        tools:context=".CategoriesActivity">
-
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blackMate"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Categorias" />
 
-            <GridLayout
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/medium_margin"
-                android:alignmentMode="alignMargins"
-                android:background="@color/white"
-                android:columnCount="2"
-                android:columnOrderPreserved="false"
-                android:rowCount="6">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <GridLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    android:layout_margin="@dimen/medium_margin"
+                    android:alignmentMode="alignMargins"
+                    android:background="@color/white"
+                    android:columnCount="2"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="6">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/arte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="2"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_art" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/art_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/idiomas"
+                        android:layout_width="wrap_content"
                         android:layout_height="100dp"
-                        android:background="@color/white"
-                        android:clickable="true"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="2"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_art"
-                            android:tint="@color/redBrick"/>
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Arte"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_languages" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/languages_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            android:tint="@color/redBrick"
-                            app:srcCompat="@drawable/ic_languages" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/matematicas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Idiomas"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_calculadora" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/math_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_calculadora"
-                            android:tint="@color/redBrick" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/diseno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Matematicas"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_design" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/design_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="18dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_design"
-                            android:tint="@color/redBrick" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/economia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Diseño"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_economy" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/economy_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            android:tint="@color/redBrick"
-                            app:srcCompat="@drawable/ic_economy" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/habilidadesSociales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Economia"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_red" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/social_abilities_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_red"
-                            android:tint="@color/redBrick" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fisica"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Habilidades Sociales"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_physic" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/physics_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_physic"
-                            android:tint="@color/redBrick"/>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/computacion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Fisica"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_laptop" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/computer_science"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_laptop"
-                            android:tint="@color/redBrick"/>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/quimica"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Computacion"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_chemistry" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/chemistry_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_chemistry"
-                            android:tint="@color/redBrick"/>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/musica"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Quimica"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_music" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/music_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_music"
-                            android:tint="@color/redBrick"/>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/mateSuperior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Musica"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/categories_size"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_calculus" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/maths_s_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="@dimen/categories_size"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_calculus"
-                            android:tint="@color/redBrick"/>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cienciasSociales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/small_margin"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
                             android:gravity="center"
-                            android:text="Matematica superior"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="@dimen/categories_size"
+                                android:tint="@color/redBrick"
+                                app:srcCompat="@drawable/ic_socials" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/socials_sciences_txt"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="@dimen/categories_size"
-                            app:srcCompat="@drawable/ic_socials"
-                            android:tint="@color/redBrick"/>
+                </GridLayout>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Ciencias sociales"
-                            android:textAllCaps="true"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/small_text"
-                            android:textStyle="bold" />
+            </LinearLayout>
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </GridLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-</LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

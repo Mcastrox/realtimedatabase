@@ -8,7 +8,6 @@
     android:orientation="horizontal"
     tools:context=".Login_Activity">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,19 +21,20 @@
 
             <ProgressBar
                 android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:indeterminate="true"
                 android:visibility="gone" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
-
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -43,7 +43,6 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:orientation="vertical">
-
 
                     <ImageView
                         android:layout_width="112dp"
@@ -54,32 +53,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/ubuntu"
-                        android:text="@string/welcome_text"
-                        android:textAllCaps="true"
-                        android:textColor="@color/soft_cyan"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/medium_margin"
-                        android:fontFamily="@font/ubuntu"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/login_text"
+                        android:textColor="@color/white"
                         android:textAllCaps="true"
-                        android:textColor="@color/grey"
-                        android:textSize="15sp" />
-
-
+                        android:textStyle="bold"
+                        android:textSize="@dimen/title_text" />
                 </LinearLayout>
 
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:layout_marginBottom="@dimen/big_margin"
                     android:background="@android:color/darker_gray" />
 
                 <LinearLayout
@@ -96,6 +84,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:hintTextColor="@color/soft_cyan"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:textColorHint="@color/hint_color">
 
                         <EditText
@@ -106,6 +95,8 @@
                             android:background="#A3131313"
                             android:ems="10"
                             android:hint="Correo"
+                            android:textSize="@dimen/medium_text"
+                            android:fontFamily="@font/roboto"
                             android:inputType="textEmailAddress"
                             android:padding="@dimen/small_margin"
                             android:textColor="#FFFFFF"
@@ -117,6 +108,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
                         app:hintTextColor="@color/soft_cyan"
                         android:textColorHint="@color/hint_color">
                         <EditText
@@ -124,58 +116,71 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/et_small_height"
                             android:layout_marginBottom="@dimen/small_margin"
+                            android:textSize="@dimen/medium_text"
                             android:background="#A3131313"
                             android:ems="10"
-                            android:hint="Contraseña"
+                            android:hint="@string/password_txt"
+                            android:fontFamily="@font/roboto"
                             android:inputType="textPassword"
                             android:padding="@dimen/small_margin"
                             android:textColor="#FFFFFF"
                             android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-                    <CheckBox
-                        android:id="@+id/logeadoState"
+
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/medium_margin"
-                        android:buttonTint="@color/light_grayish"
-                        android:text="Mantenerme logeado"
-                        android:textColor="@color/grey"
-                        android:textSize="@dimen/small_text"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginBottom="@dimen/medium_margin"
-                        android:gravity="center"
-                        android:onClick="forgotPassword"
-                        android:text="¿Olvidaste tu contraseña?"
-                        android:textColor="@color/grey"
-                        android:textSize="@dimen/small_text"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
 
+                        <CheckBox
+                            android:id="@+id/logeadoState"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/light_grayish"
+                            android:text="Mantenerme logeado"
+                            android:fontFamily="@font/roboto"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/small_text"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="viewEnd"
+                            android:layout_weight="1"
+                            android:onClick="forgotPassword"
+                            android:text="¿Olvidaste tu contraseña?"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/small_text"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto"/>
+
+                    </LinearLayout>
 
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/medium_margin"
+                        android:layout_marginTop="@dimen/big_margin"
                         android:layout_marginBottom="@dimen/small_margin"
-                        android:background="@color/soft_cyan"
+                        android:background="@drawable/button"
                         android:onClick="login"
-                        android:text="INICIAR SESION"
+                        android:text="@string/login_text"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="@dimen/button_size_text"/>
+                        android:textSize="@dimen/button_size_text"
+                        android:fontFamily="@font/roboto"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:onClick="register"
+                        android:fontFamily="@font/roboto"
                         android:text="Registrate ahora"
                         android:textColor="@color/white"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/small_text"
                         android:textStyle="bold"/>
 
 

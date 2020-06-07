@@ -4,142 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".ProfileActivity">
-    <RelativeLayout
-        android:id="@+id/rellay1"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/grad">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blackMate"
+        android:textSize="@dimen/title_text"
+        android:layout_alignParentTop="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/modify_bar_txt"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
-        <RelativeLayout
-            android:id="@+id/img_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/circle_border">
 
-            <ImageView
-
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="8dp"
-                app:srcCompat="@drawable/ic_usuario"
-                android:id="@+id/imageSelected"
-                android:adjustViewBounds="true"
-                android:background="@drawable/circle"
-                android:scaleType="centerInside"
-                />
-        </RelativeLayout>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/img_user"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/tvusername"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/white"
-            android:textSize="32dp" />
-
-    </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rellay1"
-            android:id="@+id/rellay2"
-            android:background="@color/grey">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp"
-                >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/redBrick"
-                        android:id="@+id/user_tel"
-                        android:fontFamily="sans-serif-black"
-                        android:textSize="16dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/redBrick"
-                        android:fontFamily="sans-serif-black"
-                        android:id="@+id/tvemail"
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-            </RelativeLayout>
-
-        </LinearLayout>
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rellay2"
-        android:id="@+id/relay3">
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:padding="@dimen/medium_padding"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/img_user"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/small_margin"
                 android:orientation="vertical">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Username: "
-                    android:id="@+id/user_name"
-                    android:layout_margin="8dp"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="24dp"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Direccion: "
-                    android:id="@+id/user_direccion"
-                    android:layout_margin="8dp"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="24dp"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Telefono: "
-                    android:id="@+id/user_telefono"
-                    android:layout_margin="8dp"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="24dp"
-                    />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/grad"
-                    android:id="@+id/modificar_info"
-                    android:layout_margin="24dp"
-                    android:text="Modificar"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:fontFamily="sans-serif-black"/>
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imageSelected"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:civ_border_width="1dp"
+                    android:layout_margin="@dimen/small_margin"
+                    android:background="@drawable/ic_usuario"
+                    app:srcCompat="@drawable/ic_usuario"/>
 
             </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/blackMate"
+                android:textSize="@dimen/subtitle_text"
+                tools:text="@string/AppName"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/username"
+                android:fontFamily="@font/roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/username_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:textColor="@color/blackMate" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:fontFamily="@font/roboto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textSize="@dimen/normal_text"/>
+
+            <TextView
+                android:id="@+id/lastname"
+                android:fontFamily="@font/roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/lastname_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:textColor="@color/blackMate" />
+
+            <EditText
+                android:id="@+id/user_lastname"
+                android:fontFamily="@font/roboto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:textSize="@dimen/normal_text"
+                android:inputType="textPersonName"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp" />
+
+            <TextView
+                android:id="@+id/string_direccion"
+                android:fontFamily="@font/roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/ubication_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:textColor="@color/blackMate" />
+
+            <EditText
+                android:id="@+id/user_direccion"
+                android:fontFamily="@font/roboto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/edittext_border"
+                android:ems="20"
+                android:textSize="@dimen/normal_text"
+                android:inputType="textLongMessage"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp" />
+
+            <TextView
+                android:id="@+id/user_cel"
+                android:fontFamily="@font/roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/cellphone_txt"
+                android:textSize="@dimen/subtitle_text"
+                android:textColor="@color/blackMate" />
+
+            <EditText
+                android:id="@+id/user_telefono"
+                android:fontFamily="@font/roboto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:textSize="@dimen/normal_text"
+                android:inputType="phone"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp" />
+
+            <Button
+                android:id="@+id/modificar_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/button"
+                android:text="@string/modify_txt"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/button_size_text"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

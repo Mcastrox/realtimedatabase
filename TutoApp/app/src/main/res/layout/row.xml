@@ -1,35 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:id="@+id/image"
-        app:srcCompat="@drawable/ic_usuario"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="@dimen/medium_padding">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:layout_weight="2"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:civ_border_width="0dp"
+            app:srcCompat="@drawable/ic_usuario" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                tools:text="@string/username_txt"
+                android:textSize="@dimen/title_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:fontFamily="@font/roboto"
+                tools:text="@string/lastname_txt"
+                android:textSize="@dimen/title_text"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
         <TextView
+            android:id="@+id/ubicacion_solicitud"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView1"
-            android:text="Main Text"
-            android:textColor="@color/blackMate"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:drawableStart="@drawable/ic_place_grey"
+            android:fontFamily="@font/roboto"
+            tools:text="SubText"
+            android:textColor="@color/soft_grey"
+            android:textSize="@dimen/small_text" />
+
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:text="SubText"
+            tools:text="SubText"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/blackMate"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textSize="@dimen/normal_text"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

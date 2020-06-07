@@ -13,6 +13,8 @@
     <color name="background_blackAlpha">#E6000000</color>
     <color name="background_blackAlphaLight">#CC000000</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="blackMateTransparent">#191E1E20</color>
+    <color name="soft_grey">#999999</color>
 </resources>
 
 
