@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/small_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <TextView
+        android:id="@+id/tv_disciplinas"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:fontFamily="@font/roboto"
+        android:paddingLeft="@dimen/small_margin"
+        android:paddingRight="@dimen/small_margin"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/tv_red_border"
+        android:textColor="@color/redBrick2"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:text="PLACEHOLDER"/>
+
+</androidx.cardview.widget.CardView>

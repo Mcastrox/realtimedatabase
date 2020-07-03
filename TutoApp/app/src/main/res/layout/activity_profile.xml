@@ -89,6 +89,7 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
+                android:drawableEnd="@drawable/ic_edit"
                 android:textSize="@dimen/normal_text"/>
 
             <TextView
@@ -112,7 +113,9 @@
                 android:textSize="@dimen/normal_text"
                 android:inputType="textPersonName"
                 android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:paddingRight="6dp"
+                android:drawableEnd="@drawable/ic_edit"
+                />
 
             <TextView
                 android:id="@+id/string_direccion"
@@ -135,7 +138,9 @@
                 android:textSize="@dimen/normal_text"
                 android:inputType="textLongMessage"
                 android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:paddingRight="6dp"
+                android:drawableEnd="@drawable/ic_edit"
+                />
 
             <TextView
                 android:id="@+id/user_cel"
@@ -158,7 +163,9 @@
                 android:textSize="@dimen/normal_text"
                 android:inputType="phone"
                 android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:paddingRight="6dp"
+                android:drawableEnd="@drawable/ic_edit"
+                />
 
             <Button
                 android:id="@+id/modificar_info"

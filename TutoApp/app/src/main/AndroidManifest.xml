@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tutoapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -10,11 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".CentralActivity"></activity>
-        <activity android:name=".NewMessageActivity"></activity>
-        <activity android:name=".ChatLogActivity" />
-        <activity android:name=".LatestMessagesActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".VerSolicitudEnviadaActivity"
+            android:parentActivityName=".SolicitudEnviada"/>
+        <activity
+            android:name=".CentralActivity"
+            android:theme="@style/SplashTheme2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +32,9 @@
         <activity
             android:name=".TutorFiltradoActivity"
             android:parentActivityName=".SearchFragment" />
-        <activity android:name=".SearchFragment" />
+        <activity
+            android:name=".SearchFragment"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".VerSolicitudActivity"
             android:parentActivityName=".TutoriasActivity" />
@@ -38,8 +42,12 @@
         <activity
             android:name=".ui.SolicitudActivity"
             android:parentActivityName=".SearchFragment" />
-        <activity android:name=".PseleccionadoActivity" />
-        <activity android:name=".TutorActivity" />
+        <activity
+            android:name=".PseleccionadoActivity"
+            android:parentActivityName=".SearchFragment" />
+        <activity
+            android:name=".TutorActivity"
+            android:parentActivityName=".PerfilFragment" />
         <activity
             android:name=".ProfileActivity"
             android:parentActivityName=".PerfilFragment" />
@@ -49,13 +57,17 @@
         <activity
             android:name=".Forgotpass_Activity"
             android:parentActivityName=".Change_password" />
-        <activity android:name=".PerfilFragment" />
+        <activity
+            android:name=".PerfilFragment"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Login_Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Register_Activity"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".SolicitudEnviada"
+            tools:ignore="Instantiatable"/>
 
         <meta-data
             android:name="preloaded_fonts"

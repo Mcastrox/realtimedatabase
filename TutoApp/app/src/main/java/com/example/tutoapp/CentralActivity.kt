@@ -30,6 +30,12 @@ class CentralActivity : AppCompatActivity() {
                     replaceFragment(selectedFragment as SearchFragment)
                     return@OnNavigationItemSelectedListener true
                 }
+
+                R.id.request -> {
+                    selectedFragment = SolicitudEnviada()
+                    replaceFragment(selectedFragment as SolicitudEnviada)
+                    return@OnNavigationItemSelectedListener true
+                }
                 else -> {
                     false
                 }
@@ -39,9 +45,10 @@ class CentralActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
-        logUserVerify()
         setContentView(R.layout.activity_central)
+        logUserVerify()
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         var selectedItemId = savedInstanceState?.getInt("ID")
@@ -55,6 +62,9 @@ class CentralActivity : AppCompatActivity() {
             }
             R.id.perfil -> {
                 selectedFragment = PerfilFragment()
+            }
+            R.id.request -> {
+                selectedFragment = SolicitudEnviada()
             }
             else -> {
                 selectedFragment = HomeFragment()

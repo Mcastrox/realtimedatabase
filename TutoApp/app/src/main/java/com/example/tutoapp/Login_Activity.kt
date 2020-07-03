@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Patterns
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
@@ -48,6 +49,14 @@ class Login_Activity : AppCompatActivity() {
     private fun loginUser() {
         val user: String = txtUser.text.toString()
         val pass: String = txtPassword.text.toString()
+
+
+        if (!verificarUser(user)) {
+            txtUser.setError("direccion invalida")
+
+        }
+
+
         if (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(pass)) {
             progressBar.visibility = View.VISIBLE
 
@@ -61,15 +70,19 @@ class Login_Activity : AppCompatActivity() {
                         Toast.makeText(this, "Error al autenticar", Toast.LENGTH_LONG).show()
                     }
                 }
+        }else {
+            Toast.makeText(this, "Por favor rellene todos los campos", Toast.LENGTH_LONG).show()
         }
     }
 
-// probando
-
     private fun action() {
-        var intent = Intent (this,LatestMessagesActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+        val intent = Intent (this, CentralActivity::class.java)
+        intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
+    }
+
+    private fun verificarUser(target: CharSequence?): Boolean {
+        return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches()
     }
 
 }

@@ -114,17 +114,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <CheckBox
-                        android:id="@+id/logeadoState"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/light_grayish"
-                        android:text="Mantenerme logeado"
-                        android:fontFamily="@font/roboto"
-                        android:textColor="@color/grey"
-                        android:textSize="@dimen/small_text"
-                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

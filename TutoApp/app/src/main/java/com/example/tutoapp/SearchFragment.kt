@@ -7,18 +7,18 @@ import android.util.Log
 import android.view.*
 import android.widget.ListView
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.MenuItemCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.tutoapp.adapter.TutorAdapter
 import com.example.tutoapp.databinding.FragmentSearchBinding
+import com.example.tutoapp.models.Disciplina
+import com.example.tutoapp.models.Model
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.fragment_search.*
 
 
 /**
@@ -28,13 +28,17 @@ class SearchFragment : Fragment() {
 
     private var toolbar: Toolbar? = null
     private var listaTutores = mutableListOf<Model>()
-    private lateinit var adapter : TutorAdapter
-    private lateinit var list : ListView
+    private lateinit var adapter: TutorAdapter
+    private lateinit var list: ListView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        adapter = TutorAdapter(requireActivity(), listaTutores)
+        adapter = TutorAdapter(
+            requireActivity(),
+            listaTutores
+        )
     }
 
     override fun onCreateView(
@@ -42,13 +46,18 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentSearchBinding>(inflater, R.layout.fragment_search, container, false)
+        val binding = DataBindingUtil.inflate<FragmentSearchBinding>(
+            inflater,
+            R.layout.fragment_search,
+            container,
+            false
+        )
         search(binding)
 
         return binding.root
     }
 
-    fun search(binding: FragmentSearchBinding){
+    fun search(binding: FragmentSearchBinding) {
         toolbar = binding.toolbar
         list = binding.list
         toolbar?.setTitle(R.string.ToolBarTitle)
@@ -80,8 +89,11 @@ class SearchFragment : Fragment() {
                     var cellphone: String = ""
                     var direccion: String = ""
                     var rol: String = ""
-                    var ruta : String = ""
-                    var id : String = e.child("ID").value as String
+                    var ruta: String = ""
+                    var descripcion: String = ""
+                    var listaDisciplina: ArrayList<Disciplina> = arrayListOf<Disciplina>()
+                    var id: String = e.child("ID").value as String
+
 
                     if (e.child("Name").value != null) {
                         name = e.child("Name").value as String
@@ -108,12 +120,47 @@ class SearchFragment : Fragment() {
                     if (e.child("Rol").value != null) {
                         rol = e.child("Rol").value as String
                     }
-                    if(e.child("urlImage").value != null){
-                        ruta=e.child("urlImage").value as String
+                    if (e.child("urlImage").value != null) {
+                        ruta = e.child("urlImage").value as String
+                    }
+                    if (e.child("Descripcion").value != null) {
+                        descripcion = e.child("Descripcion").value as String
+                    }
+                    if (e.child("disciplinas").exists()) {
+                        for (item in 0..11) {
+                            val name = e.child("disciplinas").child("$item").child("name").value as String
+                            val isSelected = e.child("disciplinas").child("$item")
+                                .child("seleccionado").value as Boolean
+                            if(isSelected){
+                                listaDisciplina.add(
+                                    Disciplina(
+                                        "$item",
+                                        name,
+                                        "",
+                                        isSelected
+                                    )
+                                )
+                            }
+                        }
                     }
 
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(id,name,lastName, email, cellphone, nivel, ocupation, direccion, R.drawable.ic_art,ruta))
+                        listaTutores.add(
+                            Model(
+                                id,
+                                name,
+                                lastName,
+                                email,
+                                cellphone,
+                                nivel,
+                                ocupation,
+                                direccion,
+                                R.drawable.ic_art,
+                                ruta,
+                                descripcion,
+                                listaDisciplina
+                            )
+                        )
                     }
 
                 }
@@ -121,7 +168,7 @@ class SearchFragment : Fragment() {
                 list.adapter = adapter
 
                 list.setOnItemClickListener { parent, view, position, id ->
-                    val intent = Intent(activity,PseleccionadoActivity::class.java)
+                    val intent = Intent(activity, PseleccionadoActivity::class.java)
                     intent.putExtra("tutor", listaTutores[position])
                     startActivity(intent)
                 }
@@ -135,28 +182,28 @@ class SearchFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu, menu);
-        super.onCreateOptionsMenu(menu,inflater)
-        val itemBusqueda =menu?.findItem(R.id.busqueda)
-        var vistaBusqueda=itemBusqueda?.actionView as SearchView
+        super.onCreateOptionsMenu(menu, inflater)
+        val itemBusqueda = menu?.findItem(R.id.busqueda)
+        var vistaBusqueda = itemBusqueda?.actionView as SearchView
 
 //        val itemCompartir=menu?.findItem(R.id.share)
 //        val shareActionProvider= MenuItemCompat.getActionProvider(itemCompartir) as androidx.appcompat.widget.ShareActionProvider
 //        compartirIntent(shareActionProvider)
 
 
-        vistaBusqueda.queryHint="Categoria.."
+        vistaBusqueda.queryHint = "Categoria.."
         vistaBusqueda.setOnQueryTextFocusChangeListener { v, hasFocus ->
-            Log.d("ListenerFocus",hasFocus.toString())
+            Log.d("ListenerFocus", hasFocus.toString())
         }
 
-        vistaBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        vistaBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.d("OnQueryTextSubmit",query)
+                Log.d("OnQueryTextSubmit", query)
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Log.d("OnQueryTextChange",newText)
+                Log.d("OnQueryTextChange", newText)
                 return true
             }
 
@@ -182,7 +229,6 @@ class SearchFragment : Fragment() {
 //            shareActionProvider.setShareIntent(intent)
 //        }
 //    }
-
 
 
 }

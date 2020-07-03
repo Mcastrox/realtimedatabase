@@ -1,24 +1,22 @@
 package com.example.tutoapp
 
-import android.content.ClipData
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.tutoapp.adapter.SolicitudAdapter
 import com.example.tutoapp.databinding.ActivityTutoriasBinding
 import com.example.tutoapp.viewmodel.TutorViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_tutorias.*
-import kotlinx.android.synthetic.main.fragment_search.*
 
 class TutoriasActivity : AppCompatActivity() {
 
@@ -38,6 +36,10 @@ class TutoriasActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         getCurrentUser()
+    }
+
+    override fun onStart() {
+        super.onStart()
         observerData()
     }
 

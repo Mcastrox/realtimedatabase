@@ -3,9 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
-androidExtensions {
-    experimental = true
-}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -63,7 +60,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     // Blur image
     implementation 'jp.wasabeef:picasso-transformations:2.2.1'
-
+    
     implementation 'com.google.firebase:firebase-core:17.4.0'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation 'com.google.firebase:firebase-database:19.2.1'
@@ -74,12 +71,15 @@ dependencies {
     implementation 'androidx.mediarouter:mediarouter:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
 
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    implementation 'com.xwray:groupie:2.1.0'
+    //para los adapters
+    implementation "com.xwray:groupie:2.1.0"
 
 }

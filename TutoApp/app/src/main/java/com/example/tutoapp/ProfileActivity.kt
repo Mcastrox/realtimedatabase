@@ -44,7 +44,15 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         initialise()
         modificar_info.setOnClickListener {
-            guardar()
+
+            if(modDireccion.text.isNotEmpty() && modLastName.text.isNotEmpty() && modName.text.isNotEmpty()
+                    && modTel.text.isNotEmpty()) {
+                guardar()
+            }else{
+
+                Toast.makeText(this, "Por favor llene todos los campos", Toast.LENGTH_LONG).show()
+
+            }
         }
 
         toolbar = findViewById(R.id.toolbar)

@@ -4,8 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Register.iml" filepath="$PROJECT_DIR$/../Register.iml" group="Register" />
       <module fileurl="file://$PROJECT_DIR$/Register-app.iml" filepath="$PROJECT_DIR$/Register-app.iml" group="Register/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TutoApp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/TutoApp-app.iml" group="tutoapp/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1031825822/TutoApp-tutoapp.iml" filepath="$PROJECT_DIR$/.idea/modules/1031825822/TutoApp-tutoapp.iml" group="tutoapp" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="Register/app" />
       <module fileurl="file://$PROJECT_DIR$/../asder-Register.iml" filepath="$PROJECT_DIR$/../asder-Register.iml" group="Register" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2088475952/tutoapp.iml" filepath="$PROJECT_DIR$/.idea/modules/2088475952/tutoapp.iml" group="tutoapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tutoapp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/tutoapp-app.iml" group="tutoapp/app" />
     </modules>
   </component>
 </project>

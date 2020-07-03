@@ -2,7 +2,6 @@ package com.example.tutoapp.ui
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,8 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.R
-import com.example.tutoapp.SearchFragment
-import com.example.tutoapp.TutoriaModel
+import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,9 +26,14 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var estado: String
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
+    private lateinit var nombre_tutor: String
+    private lateinit var apellido_tutor: String
     private lateinit var foto_estudiante: String
+    private lateinit var foto_tutor: String
     private lateinit var idEstudiante: String
     private lateinit var seleccion: String
+    private lateinit var correoTutor: String
+    private lateinit var telefonoTutor: String
 
     //lazy se usa para instanciar el objeto hasta que se necesite
     private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
@@ -87,9 +90,20 @@ class SolicitudActivity : AppCompatActivity() {
 
 
         btn_solicitar.setOnClickListener {
-            crearSolicitud()
-            finish()
+
+            if(txt_direccion.text.isNotEmpty() && txt_categoria.text.isNotEmpty() && txt_fecha.text.isNotEmpty() &&
+                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty()) {
+
+                crearSolicitud()
+                finish()
+
+            }else{
+
+                Toast.makeText(this, "Por favor rellene todos los campos", Toast.LENGTH_LONG).show()
+
+            }
         }
+
 
 
     }
@@ -99,7 +113,10 @@ class SolicitudActivity : AppCompatActivity() {
         nombre_estudiante = intent.getStringExtra("nombre_estudiante")
         foto_estudiante = intent.getStringExtra("foto_estudiante")
         idTutor = intent.getStringExtra("idTutor")
+        foto_tutor = intent.getStringExtra("foto_tutor")
         apellido_estudiante = intent.getStringExtra("apellido_estudiante")
+        nombre_tutor = intent.getStringExtra("nombre_tutor")
+        apellido_tutor = intent.getStringExtra("apellido_tutor")
         txt_direccion = findViewById(R.id.txt_direccion)
         txt_categoria = findViewById(R.id.txt_categoria)
         txt_fecha = findViewById(R.id.txt_fecha)
@@ -107,7 +124,8 @@ class SolicitudActivity : AppCompatActivity() {
         txt_notas = findViewById(R.id.notas_tutor)
         estado = "En espera"
         btn_solicitar = findViewById(R.id.action_solicitar)
-
+        correoTutor=intent.getStringExtra("correo_tutor")
+        telefonoTutor=intent.getStringExtra("telefono_tutor")
         selectedCategory()
 
         txt_categoria.setText(seleccion)
@@ -116,6 +134,7 @@ class SolicitudActivity : AppCompatActivity() {
 
     private fun crearSolicitud() {
         var id = UUID.randomUUID().toString()
+
         var solicitud = TutoriaModel(
             id,
             txt_direccion.text.toString(),
@@ -128,10 +147,15 @@ class SolicitudActivity : AppCompatActivity() {
             estado,
             nombre_estudiante,
             foto_estudiante,
-            apellido_estudiante
+            apellido_estudiante,
+            nombre_tutor,
+            apellido_tutor,
+            foto_tutor,
+            correoTutor,
+            telefonoTutor
         )
 
-        viewModel.postUserData(solicitud, idTutor)
+        viewModel.postUserData(solicitud, idTutor, idEstudiante)
 
         Toast.makeText(this, "Solicitud enviada con exito", Toast.LENGTH_LONG).show()
     }

@@ -3,7 +3,7 @@ package com.example.tutoapp.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.tutoapp.Persona
+import com.example.tutoapp.models.Persona
 import com.example.tutoapp.domain.data.network.Repo
 
 class SolicitudViewModel: ViewModel() {
