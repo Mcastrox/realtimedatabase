@@ -53,6 +53,7 @@ class VerSolicitudActivity : AppCompatActivity() {
         idTutor = solicitud.tutorSolicitado
         idSolicitud = solicitud.id
         correoTutor= solicitud.correoTutor
+        telefonoTutor= solicitud.telefonoTutor
         binding.apply {
             nombreEstudiante.text = solicitud.nombre_estudiante + " " + solicitud.apellido_estudiante
             fechaTutoria.text = solicitud.fecha
@@ -61,17 +62,18 @@ class VerSolicitudActivity : AppCompatActivity() {
             notasTutoria.text = solicitud.nota
             tvMateria.text = solicitud.categoria
             aceptarTutoria.setOnClickListener {
-                val mDialogView = LayoutInflater.from(this@VerSolicitudActivity).inflate(R.layout.select_contact_form, null)
+                /*val mDialogView = LayoutInflater.from(this@VerSolicitudActivity).inflate(R.layout.select_contact_form, null)
                 val mBuilder = AlertDialog.Builder(this@VerSolicitudActivity).setView(mDialogView).setTitle("Formulario de Contacto")
                 val mAlertDialog = mBuilder.show()
                 mDialogView.wha.setOnClickListener{
-                    mAlertDialog.dismiss()
                     sendWhatsApp()
+                    mAlertDialog.dismiss()
                 }
                 mDialogView.mail.setOnClickListener{
-                    mAlertDialog.dismiss()
                     sendEmail(correoTutor,"TutoAppMail","Este es un mensaje de prueba para contactar a tu tutor")
-                }
+                    mAlertDialog.dismiss()
+                }*/
+                sendWhatsApp(telefonoTutor)
                 viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
                 Toast.makeText(this@VerSolicitudActivity, "Has aceptado la solicitud de ${solicitud.nombre_estudiante}", Toast.LENGTH_LONG).show()
 
@@ -89,10 +91,11 @@ class VerSolicitudActivity : AppCompatActivity() {
 
     }
 
-    private fun sendWhatsApp() {
-        val uri : Uri = Uri.parse("smsto:"+ "${telefonoTutor}")
-        val intent = Intent(Intent.ACTION_SEND,uri)
-        intent.setPackage("com.whatsapp")
+    private fun sendWhatsApp(numero: String) {
+/* solo abrir wha
+        val intent = packageManager.getLaunchIntentForPackage("com.whatsapp")*/
+val intent = Intent(Intent.ACTION_VIEW)
+        intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+503"+numero))
         startActivity(intent)
     }
 
