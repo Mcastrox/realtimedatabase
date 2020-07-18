@@ -11,7 +11,9 @@ import android.widget.ListAdapter
 import android.widget.ListView
 import com.google.firebase.database.*
 import com.google.firebase.database.core.Repo
+import kotlinx.android.synthetic.main.activity_create_file.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.nio.channels.AsynchronousByteChannel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var ref: DatabaseReference
@@ -34,15 +36,16 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-
+                var nombre_cliente: String= ""
                 for (e in p0.children) {
 
                     if (e.child("Nombre_cliente").value != null) {
-                        val nombre_cliente= e.child("Nombre_cliente").value as String
+                        nombre_cliente= e.child("Nombre_cliente").value as String
 
-                        lista.add(nombre_cliente)
                     }
-                    val adapter = ReporteAdapter(applicationContext,R.layout.item_reporte,lista_reportes)
+                    val reporte=Reporte(nombre_cliente,"abc123","motor","cambiar","12:30 ","22/7/2020")
+                    lista.add(reporte)
+                    val adapter = ReporteAdapter(applicationContext,R.layout.item_reporte,lista)
                     mostrar.adapter=adapter
 
                 }

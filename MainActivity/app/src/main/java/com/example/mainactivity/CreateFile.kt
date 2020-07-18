@@ -40,8 +40,8 @@ class CreateFile : AppCompatActivity() {
         date=fecha.text.toString().trim()
 
 
-        val ref = FirebaseDatabase.getInstance().getReference("Reportes")
-        ref.child("id").setValue(id)
+        val ref = FirebaseDatabase.getInstance().getReference("${id}")
+
         ref.child("Nombre_cliente").setValue(clientName)
         ref.child("Placa del carro").setValue(carId)
         ref.child("Trabajo a realizar").setValue(jobToDo)
