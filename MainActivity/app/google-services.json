@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "772293992226",
+    "firebase_url": "https://taller-fb55d.firebaseio.com",
+    "project_id": "taller-fb55d",
+    "storage_bucket": "taller-fb55d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772293992226:android:0ff2f610068917a482cf7b",
+        "android_client_info": {
+          "package_name": "com.example.mainactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772293992226-3vd9qk5qfu2fk1vq5n688ejqcl2818j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZHiLKMYG6aRAr0eM7WibefTiqrA8zfxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772293992226-3vd9qk5qfu2fk1vq5n688ejqcl2818j3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
