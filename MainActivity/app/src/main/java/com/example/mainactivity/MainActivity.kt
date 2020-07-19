@@ -18,6 +18,7 @@ import java.nio.channels.AsynchronousByteChannel
 class MainActivity : AppCompatActivity() {
     private lateinit var ref: DatabaseReference
     private lateinit var lista: MutableList<Reporte>
+    lateinit var reporte: Reporte
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         lista= mutableListOf()
 
 
-         ref = FirebaseDatabase.getInstance().getReference("Reportes")
+         ref = FirebaseDatabase.getInstance().getReference("/Reportes")
 
         ref.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
@@ -36,23 +37,60 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                var nombre_cliente: String= ""
+
                 for (e in p0.children) {
+                    var nombre_cliente: String= ""
+                    var placa : String=""
+                    var trabajos: String=""
+                    var repuestos : String=""
+                    var fecha: String=""
+                    var hora : String =""
 
                     if (e.child("Nombre_cliente").value != null) {
                         nombre_cliente= e.child("Nombre_cliente").value as String
 
                     }
-                    val reporte=Reporte(nombre_cliente,"abc123","motor","cambiar","12:30 ","22/7/2020")
+                    if(e.child("Placa del carro").value != null ){
+                        placa=e.child("Placa del carro").value as String
+                    }
+                    if(e.child("Trabajo a realizar").value != null ){
+                        trabajos=e.child("Trabajo a realizar").value as String
+                    }
+                    if(e.child("Repuestos").value != null ){
+                        repuestos=e.child("Repuestos").value as String
+                    }
+                    if(e.child("Hora").value != null ){
+                       hora=e.child("Hora").value as String
+                    }
+                    if(e.child("Fecha").value != null ){
+                       fecha=e.child("Fecha").value as String
+                    }
+
+
+                     reporte=Reporte(nombre_cliente,placa,trabajos,repuestos,hora,fecha)
                     lista.add(reporte)
                     val adapter = ReporteAdapter(applicationContext,R.layout.item_reporte,lista)
                     mostrar.adapter=adapter
 
+
+
                 }
+
+
 
         }
         })
 
+        mostrar.setOnItemClickListener { parent, view, position, id ->
+            val intent = Intent(this, VerReporte::class.java)
+            intent.putExtra("nombre_cliente", reporte.nombre_cliente)
+            intent.putExtra("placa", reporte.placa)
+            intent.putExtra("trabajos", reporte.trabajos)
+            intent.putExtra("repuestos", reporte.repuestos)
+            intent.putExtra("fecha", reporte.fecha)
+            intent.putExtra("hora", reporte.hora)
+            startActivity(intent)
+        }
 
 
     }
